@@ -12,21 +12,20 @@ public class MyServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String destination = request.getParameter("destination");
-        String info = getTravelInfo(destination);
-        request.setAttribute("destination", destination);
-        request.setAttribute("travelInfo", info);
+        String destinazione = request.getParameter("destination");
+        String info = InfoViaggio(destinazione);
+        request.setAttribute("destinazione", destinazione);
+        request.setAttribute("InfoViaggio", info);
         request.getRequestDispatcher("result.jsp").forward(request, response);
     }
 
-    private String getTravelInfo(String destination) {
-        if (destination.equalsIgnoreCase("Roma")) {
-            return "Roma è la capitale d'Italia, famosa per il Colosseo, il Pantheon e altre attrazioni storiche.";
-        } else if (destination.equalsIgnoreCase("Parigi")) {
-            return "Parigi è la capitale della Francia, famosa per la Torre Eiffel, il Louvre e altri monumenti.";
-        } else {
-            return "Spiacenti, non abbiamo informazioni sulla destinazione selezionata.";
+    private String InfoViaggio(String destinazione) {
+
+        switch (destinazione){
+            case "Parigi":
+
         }
-    }
+    return "lol";
+}
 }
 
